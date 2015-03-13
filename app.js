@@ -68,6 +68,6 @@ var server = app.listen(3000, function() {
 //fetchBlpapi();
 
 var fetchYFinance = require('./fetch-yahoofinance.js');
-fetchYFinance();
+fetchYFinance.snapshot('AAPL');
 
 module.exports = app;
