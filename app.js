@@ -1,3 +1,4 @@
+var args = process.argv.slice(2);
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -68,8 +69,12 @@ var server = app.listen(3000, function() {
 //fetchBlpapi();
 
 var fetchYFinance = require('./fetch-yahoofinance.js');
+//fetchYFinance.snapshot('AAPL');
+//fetchYFinance.snapshot('LHL.DE');
 
-fetchYFinance.snapshot('AAPL');
-fetchYFinance.snapshot('LHL.DE');
+var pushSpreadsheet = require('./push-spreadsheet.js');
+pushSpreadsheet.load(args[0], args[1]);
+
+
 
 module.exports = app;
