@@ -33,7 +33,7 @@ var fetch = {
             to: '2012-12-31'
             // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
         }, function (err, quotes) {
-           console.log(err, quotes);
+            (err) ? console.err(err) : console.log(quotes);
         });
     },
 
@@ -43,7 +43,7 @@ var fetch = {
             fields: FIELDS
             //fields: ['s', 'n', 'd1', 'l1', 'y', 'r']
         }, function (err, snapshot) {
-            console.log(err, snapshot);
+            (err) ? console.err(err) : console.log(snapshot);
         });
     }
 };
