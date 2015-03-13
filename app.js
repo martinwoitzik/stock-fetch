@@ -4,36 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var blpapi = require('blpapi');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
-var service_id = 1;
-var securities = [
-    { security: 'AAPL US Equity', correlation: 0, fields: ['LAST_TRADE'] },
-    { security: 'GOOG US Equity', correlation: 1, fields: ['LAST_TRADE'] }
-];
-
-var session = new blpapi.Session({host: '127.0.0.1', port: 8194});
-session.on('SessionStarted', function(m) {
-    session.openService('//blp/mktdata', service_id);
-});
-
-session.on('ServiceOpened', function(m) {
-    if (m.correlations[0].value == service_id) {
-        session.subscribe(securities);
-    }
-});
-
-session.on('MarketDataEvents', function(m) {
-    if (m.data.hasOwnProperty('LAST_TRADE')) {
-        console.log(securities[m.correlations[0].value].security, 'LAST_TRADE', m.data.LAST_TRADE);
-    }
-});
-session.start();
 
 
 // view engine setup
@@ -88,5 +63,8 @@ var server = app.listen(3000, function() {
 
     console.log('Example app listening at http://%s:%s', host, port);
 });
+
+var fetchBlpapi = require('./fetch-blpapi.js');
+fetchBlpapi();
 
 module.exports = app;
