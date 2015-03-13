@@ -27,6 +27,6 @@ var init = function() {
     });
 
     session.start();
-}
+};
 
 module.exports = init;

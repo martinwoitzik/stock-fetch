@@ -64,7 +64,10 @@ var server = app.listen(3000, function() {
     console.log('Example app listening at http://%s:%s', host, port);
 });
 
-var fetchBlpapi = require('./fetch-blpapi.js');
-fetchBlpapi();
+//var fetchBlpapi = require('./fetch-blpapi.js');
+//fetchBlpapi();
+
+var fetchYFinance = require('./fetch-yahoofinance.js');
+fetchYFinance();
 
 module.exports = app;
