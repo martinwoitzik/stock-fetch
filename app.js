@@ -67,14 +67,14 @@ var server = app.listen(3000, function() {
     console.log('Example app listening at http://%s:%s', host, port);
 });
 
-//var fetchBlpapi = require('./fetch-blpapi.js');
+//var fetchBlpapi = require('./private/fetch-blpapi.js');
 //fetchBlpapi();
 
-//var fetchYFinance = require('./fetch-yahoofinance.js');
+//var fetchYFinance = require('./private/fetch-yahoofinance.js');
 //fetchYFinance.snapshot('AAPL');
 //fetchYFinance.snapshot('LHL.DE');
 
-//var pushSpreadsheet = require('./push-spreadsheet.js');
+//var pushSpreadsheet = require('./private/push-spreadsheet.js');
 //pushSpreadsheet.load(args[0], args[1]);
 
 

@@ -43,7 +43,9 @@ var fetch = {
             fields: FIELDS
             //fields: ['s', 'n', 'd1', 'l1', 'y', 'r']
         }, function (err, snapshot) {
-            (err) ? console.err(err) : console.log(snapshot);
+            //(err) ? console.err(err) : console.log(snapshot);
+            if (err)
+              console.error(err);
         });
     }
 };

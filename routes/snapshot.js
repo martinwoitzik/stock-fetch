@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var fetchYFinance = require('../fetch-yahoofinance.js');
+var fetchYFinance = require('../private/fetch-yahoofinance.js');
 
 router.get('/', function(req, res, next) {
 
