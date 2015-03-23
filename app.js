@@ -72,8 +72,8 @@ var fetchYFinance = require('./fetch-yahoofinance.js');
 //fetchYFinance.snapshot('AAPL');
 //fetchYFinance.snapshot('LHL.DE');
 
-var pushSpreadsheet = require('./push-spreadsheet.js');
-pushSpreadsheet.load(args[0], args[1]);
+//var pushSpreadsheet = require('./push-spreadsheet.js');
+//pushSpreadsheet.load(args[0], args[1]);
 
 
 
