@@ -77,6 +77,9 @@ var server = app.listen(3000, function() {
 //var pushSpreadsheet = require('./private/push-spreadsheet.js');
 //pushSpreadsheet.load(args[0], args[1]);
 
+var crawler = require('./private/crawler.js');
+crawler.test();
+
 
 
 module.exports = app;
