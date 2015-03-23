@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+th {
+  text-align: left;
+  border-bottom: 1px solid darkgrey;
+}
+
+th:first-child {
+  min-width: 280px;
+}
+
+.wkn {
+  color: darkgoldenrod;
+}

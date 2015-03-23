@@ -6,8 +6,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/users');
+var snapshot = require('./routes/snapshot');
 
 var app = express();
 
@@ -24,8 +25,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
+app.use('/snapshot', snapshot);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,7 +70,7 @@ var server = app.listen(3000, function() {
 //var fetchBlpapi = require('./fetch-blpapi.js');
 //fetchBlpapi();
 
-var fetchYFinance = require('./fetch-yahoofinance.js');
+//var fetchYFinance = require('./fetch-yahoofinance.js');
 //fetchYFinance.snapshot('AAPL');
 //fetchYFinance.snapshot('LHL.DE');
 

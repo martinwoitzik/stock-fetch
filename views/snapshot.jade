@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Snapshot of <span class="wkn">#{stockData.name}</span>
+
+  table
+    tr
+      th Key
+      th Value
+    each val, key in stockData
+      tr
+        td #{key}
+        td #{val}

@@ -13,13 +13,13 @@ var FIELDS = _.flatten([
     // Misc
     ['w1', 'w4', 'p1', 'm', 'm2', 'g1', 'g3', 'g4', 'g5', 'g6'],
     // 52 Week Pricing
-    //['k', 'j', 'j5', 'k4', 'j6', 'k5', 'w'],
+    ['k', 'j', 'j5', 'k4', 'j6', 'k5', 'w'],
     // System Info
-    //['i', 'j1', 'j3', 'f6', 'n', 'n4', 's1', 'x', 'j2'],
+    ['i', 'j1', 'j3', 'f6', 'n', 'n4', 's1', 'x', 'j2'],
     // Volume
     ['v', 'a5', 'b6', 'k3', 'a2'],
     // Ratio
-    ['e', 'e7', 'e8', 'e9', 'b4', 'j4', 'p5', 'p6', 'r', 'r2', 'r5', 'r6', 'r7', 's7']
+    ['e', 'e7', 'e8', 'e9', 'b4', 'j4', 'p5', 'p6', 'r', 'r2', 'r5', 'r6', 'r7', 's7'],
     // Misc
     //['t7', 't6', 'i5', 'l2', 'l3', 'v1', 'v7', 's6', 'e1']
 ]);
@@ -27,7 +27,7 @@ var FIELDS = _.flatten([
 var fetch = {
 
     historical: function(symbol) {
-        yahooFinance.historical({
+        return yahooFinance.historical({
             symbol: symbol ? symbol : 'AAPL',
             from: '2012-01-01',
             to: '2012-12-31'
@@ -38,7 +38,7 @@ var fetch = {
     },
 
     snapshot: function(symbol) {
-        yahooFinance.snapshot({
+        return yahooFinance.snapshot({
             symbol: symbol ? symbol : 'AAPL',
             fields: FIELDS
             //fields: ['s', 'n', 'd1', 'l1', 'y', 'r']
