@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var fetchYFinance = require('../private/fetch-yahoofinance.js');
+var fetchYFinance = require('../fetch-yahoofinance.js');
 
 router.get('/', function(req, res, next) {
 
-  fetchYFinance.historical(req.query.wkn.toUpperCase())
+  fetchYFinance.snapshot(req.query.wkn.toUpperCase())
     .then(function (stockData) {
-      res.render('history', {
+      res.render('snapshot', {
         wkn: req.query.wkn,
         stockData: stockData
       });

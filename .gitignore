@@ -1,5 +1,6 @@
-bower_components
+app/libs
 node_modules
 README.backup.md
 package.backup.json
 .idea
+dist

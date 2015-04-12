@@ -6,10 +6,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var snapshot = require('./routes/snapshot');
-var history = require('./routes/history');
+var index = require('./server/routes/index');
+var snapshot = require('./server/routes/snapshot');
+var history = require('./server/routes/history');
 
 var app = express();
 
@@ -24,10 +23,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/snapshot', snapshot);
 app.use('/history', history);
 
@@ -69,17 +67,17 @@ var server = app.listen(3000, function() {
     console.log('Example app listening at http://%s:%s', host, port);
 });
 
-//var fetchBlpapi = require('./private/fetch-blpapi.js');
+//var fetchBlpapi = require('./server/fetch-blpapi.js');
 //fetchBlpapi();
 
-//var fetchYFinance = require('./private/fetch-yahoofinance.js');
+//var fetchYFinance = require('./server/fetch-yahoofinance.js');
 //fetchYFinance.snapshot('AAPL');
 //fetchYFinance.snapshot('LHL.DE');
 
-//var pushSpreadsheet = require('./private/push-spreadsheet.js');
+//var pushSpreadsheet = require('./server/push-spreadsheet.js');
 //pushSpreadsheet.load(args[0], args[1]);
 
-var crawler = require('./private/crawler.js');
+var crawler = require('./server/crawler.js');
 //crawler.test();
 
 
