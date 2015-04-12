@@ -14,6 +14,7 @@
     "edit-google-spreadsheet": "^0.2.16",
     "express": "~4.12.2",
     "gulp": "^3.8.11",
+    "gulp-concat": "^2.4.1",
     "gulp-plumber": "^0.6.6",
     "gulp-sass": "^1.2.0",
     "gulp-shell": "^0.2.9",
