@@ -29,8 +29,8 @@ var fetch = {
     historical: function(symbol) {
         return yahooFinance.historical({
             symbol: symbol ? symbol : 'AAPL',
-            from: '2012-01-01',
-            to: '2012-12-31'
+            from: '2015-01-01',
+            to: '2015-03-01'
             // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
         }, function (err, quotes) {
             (err) ? console.err(err) : console.log(quotes);
