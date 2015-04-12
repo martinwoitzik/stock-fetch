@@ -80,7 +80,7 @@ var server = app.listen(3000, function() {
 //pushSpreadsheet.load(args[0], args[1]);
 
 var crawler = require('./private/crawler.js');
-crawler.test();
+//crawler.test();
 
 
 

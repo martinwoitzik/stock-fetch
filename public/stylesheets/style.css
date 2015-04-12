@@ -19,3 +19,25 @@ th:first-child {
 .wkn {
   color: darkgoldenrod;
 }
+
+.form-group {
+  margin-bottom: 50px;
+}
+
+.row {
+  display: block;
+  position: relative;
+}
+
+.row:last-child {
+  margin-top: 10px;
+}
+
+.column {
+  display: inline-block;
+  position: relative;
+}
+
+.column:first-child {
+  width: 50px;
+}

@@ -5,10 +5,31 @@ block content
   p Welcome to #{title}
 
   form(action="/snapshot", method="GET")
-    input(type="text", name="wkn")
-    button Get stock data
-
+    .form-group
+      .row
+        .column
+          label(for="wkn_snapshot") WKN
+        .column
+          input(type="text", name="wkn", id="wkn_snapshot")
+      .row
+        button Get stock data snapshot
 
   form(action="/history", method="GET")
-    input(type="text", name="wkn")
-    button Get stock historical data
+    .form-group
+      .row
+        .column
+          label(for="wkn_historical") WKN
+        .column
+          input(type="text", name="wkn", id="wkn_historical")
+      .row
+        .column
+          label(for="date_from") Von
+        .column
+          input(type="date", name="date_from")
+      .row
+        .column
+          label(for="date_to") Bis
+        .column
+          input(type="date", name="date_to")
+      .row
+        button Get stock data historical
