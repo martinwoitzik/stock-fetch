@@ -10,7 +10,7 @@ block content
         .column
           label(for="wkn_snapshot") WKN
         .column
-          input(type="text", name="wkn", id="wkn_snapshot")
+          input(type="text", name="wkn", id="wkn_snapshot", value="aapl")
       .row
         button Get stock data snapshot
 
@@ -20,16 +20,26 @@ block content
         .column
           label(for="wkn_historical") WKN
         .column
-          input(type="text", name="wkn", id="wkn_historical")
+          input(type="text", name="wkn", id="wkn_historical", value="aapl")
       .row
         .column
           label(for="date_from") Von
         .column
-          input(type="date", name="date_from")
+          input(type="date", name="date_from", value="2015-01-01")
       .row
         .column
           label(for="date_to") Bis
         .column
-          input(type="date", name="date_to")
+          input(type="date", name="date_to", value="2015-04-14")
       .row
         button Get stock data historical
+
+  form(action="/quandl", method="GET")
+    .form-group
+      .row
+        .column
+          label(for="wkn_quandl") WKN
+        .column
+          input(type="text", name="wkn", id="wkn_quandl", value="aapl")
+      .row
+        button Get stock data by Quandl

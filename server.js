@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var index = require('./server/routes/index');
 var snapshot = require('./server/routes/snapshot');
 var history = require('./server/routes/history');
+var quandl = require('./server/routes/quandl');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/', index);
 app.use('/snapshot', snapshot);
 app.use('/history', history);
+app.use('/quandl', quandl);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -77,7 +79,7 @@ var server = app.listen(3000, function() {
 //var pushSpreadsheet = require('./server/push-spreadsheet.js');
 //pushSpreadsheet.load(args[0], args[1]);
 
-var crawler = require('./server/crawler.js');
+//var crawler = require('./server/crawler.js');
 //crawler.test();
 
 

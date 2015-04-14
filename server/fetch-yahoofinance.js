@@ -16,11 +16,11 @@ var stockFields = {
 
 var fetch = {
 
-    historical: function(symbol) {
+    historical: function(symbol, dateFrom, dateTo) {
         return yahooFinance.historical({
             symbol: symbol ? symbol : 'AAPL',
-            from: '2015-01-01',
-            to: '2015-03-01'
+            from: dateFrom,
+            to: dateTo
             // period: 'd'  // 'd' (daily), 'w' (weekly), 'm' (monthly), 'v' (dividends only)
         }, function (err, quotes) {
             (err) ? console.err(err) : console.log(quotes);
